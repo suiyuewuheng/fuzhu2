@@ -1,0 +1,39 @@
+{% extends 'release/base.html' %}
+
+{% block content1 %}
+<h1>Welcome to Kxiansen.Home.</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <ul>
+                {% for i in all_q %}
+                <li><p><font size="5"><a href="{% url 'polls:detail' i.id %}">{{ i.pub_date | date:'Y-m-d H:i:s' }}&nbsp;&nbsp;{{ i.question_text }}</a></font></p></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-sm-4"></div>
+
+        <div class="col-sm-8">
+            {% for i in total %}
+            <font size="3"><a href="">{{ i }}</a></font> &nbsp;&nbsp;
+            {% endfor %}
+
+        </div>
+        <div class="col-sm-4"></div>
+        <br>
+        <div class="col-sm-8">
+                    <br><br>
+            <div><font size="5">
+
+            </font>
+            </div>
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

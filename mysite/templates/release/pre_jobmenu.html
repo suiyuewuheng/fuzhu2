@@ -1,0 +1,14 @@
+{% extends 'release/base.html' %}
+
+{% block content1  %}
+<div style="margin-left:12px;">
+    <div>
+        <p><font size="5">扫描</font></p>
+        <form role="form" method="post" action="{% url 'release:jobmenu' %}"> {% csrf_token %}
+            <input type="submit" class="btn btn-primary" name="klq" value="确认"/>
+        </form>
+    </div>
+</div>
+
+{%  endblock %}
+

@@ -1,0 +1,31 @@
+{% extends 'release/base.html' %}
+
+{% block content2 %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>tomcat1</h1>
+            主机名：{{ result1 }} <br>
+            主机IP：{{ result2 }}<br>
+            版本信息：{{ result3 }}<br>
+            物理CPU数量：{{ result4 }}<br>
+            逻辑CPU数量：{{ result5 }}<br>
+            物理CPU型号：{{ result6 }}<br>
+            物理内存：{{ result7 }}<br>
+            网卡型号：{{ result8 }}<br>
+        </div>
+        <h1>tomcat2</h1>
+        <div class="col-sm-6">
+            主机名：{{ result2_1 }} <br>
+            主机IP：{{ result2_2 }}<br>
+            版本信息：{{ result2_3 }}<br>
+            物理CPU数量：{{ result2_4 }}<br>
+            逻辑CPU数量：{{ result2_5 }}<br>
+            物理CPU型号：{{ result2_6 }}<br>
+            物理内存：{{ result2_7 }}<br>
+            网卡型号：{{ result2_8 }}<br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

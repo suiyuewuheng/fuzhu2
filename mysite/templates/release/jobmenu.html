@@ -1,0 +1,93 @@
+{% extends 'release/base.html' %}
+
+{% block content1  %}
+<div style="margin-left:12px;">
+    <!--<p><font size="5"><a href="{% url 'release:scan' %}"></a></font></p>-->
+    <p><font size="5">扫描</p>
+    <p>www.fz.com</p>
+    <form role="form" action="{% url 'release:jobmenu' %}"> {% csrf_token %}
+
+        <input type="submit" class="btn btn-primary" value="扫描"/>
+    </form>
+    <p><font size="5">备份</p>
+    <form role="form" method="post" action="{% url 'release:backup' %}"> {% csrf_token %}
+        <div class="form-group">
+            <div class="col-sm-5">
+                <p>
+                    <select class="form-control" name="backup_name">
+                        {% for i in dir %}
+                        <option value="{{ i }}">{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </p>
+            </div>
+        </div>
+        <!--<input type="reset" class="btn btn-primary" value="确认回滚"/>-->
+        <input type="submit" class="btn btn-primary" value="确认备份"/>
+    </form>
+<br>
+    <p><font size="5">发布</font></p>
+    <form role="form" method="post" action="{% url 'release:start_release' %}"> {% csrf_token %}
+        <div class="form-group">
+            <div class="col-sm-5">
+                <p>
+                    <select class="form-control" name="release_name">
+                        {% for i in dir %}
+                        <option value="{{ i }}">{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </p>
+            </div>
+        </div>
+        <input type="reset" class="btn btn-primary" value="回滚"/>
+        <input type="submit" class="btn btn-primary" value="确认发布"/>
+
+    </form>
+
+</div>
+<div style="margin-left:12px;">
+    <br>
+    <p>mall.fz.com</p>
+    <form role="form" action="{% url 'release:jobmenu' %}"> {% csrf_token %}
+
+        <input type="submit" class="btn btn-primary" value="扫描"/>
+    </form>
+    <p><font size="5">备份</p>
+    <form role="form" method="post" action="{% url 'release:backup' %}"> {% csrf_token %}
+        <div class="form-group">
+            <div class="col-sm-5">
+                <p>
+                    <select class="form-control" name="backup_name">
+                        {% for i in dir %}
+                        <option value="{{ i }}">{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </p>
+            </div>
+        </div>
+        <!--<input type="reset" class="btn btn-primary" value="确认回滚"/>-->
+        <input type="submit" class="btn btn-primary" value="确认备份"/>
+    </form>
+<br>
+    <p><font size="5">发布</font></p>
+    <form role="form" method="post" action="{% url 'release:start_release' %}"> {% csrf_token %}
+        <div class="form-group">
+            <div class="col-sm-5">
+                <p>
+                    <select class="form-control" name="release_name">
+                        {% for i in dir %}
+                        <option value="{{ i }}">{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </p>
+            </div>
+        </div>
+        <input type="reset" class="btn btn-primary" value="回滚"/>
+        <input type="submit" class="btn btn-primary" value="确认发布"/>
+
+    </form>
+
+</div>
+
+{% endblock %}
+
