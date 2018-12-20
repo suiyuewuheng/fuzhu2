@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul,li{
+			margin: 0px;
+			list-style-type: none;
+		}
+		body{
+			margin: 0px;
+			padding: 0px;
+		}
+		#head{
+			width: 100%;
+			height: 50px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			background: #18bc9c;
+			opacity: 0.9;
+		}
+		#head li{
+			line-height: 50px;
+			text-align: center;
+			color: #ffffff;
+			font-size: 23px;
+			width: 130px;
+			float: left;
+			cursor: pointer;
+		}
+		#he_li{
+			font-weight: bold;
+			margin-left: -40px;
+		}
+		#head li:hover{
+			background: #16a98c;
+		}
+		#head ul{
+			overflow: hidden;
+		}
+		#left{
+			width: 230px;
+			height: 948px;
+			background: #222d32;
+		}
+		#left ul{
+			position: absolute;
+			top: 50px;
+			left:0px;
+		}
+		#left li{
+			height: 40px;
+			width: 220px;
+			color: #fff;
+			line-height: 40px;
+			margin-left: -40px;
+			font-size: 22px;
+			cursor: pointer;
+			text-indent: 50px;
+			margin-top: 10px;
+		}
+		#le_li{
+			height: 60px;
+		}
+		#left li:hover{
+			background: #1e282c;
+		}
+		#right h2{
+			margin-left: 20px;
+		}
+		#right{
+			position: absolute;
+			left:230px;
+			top:50px;
+			background: #f1f4f6;
+			width: 1620px;
+			height: 900px;
+		}
+		#content{
+			width: 1570px;
+			height: 820px;
+		}
+		#cont1{
+			height: 100px;
+			width: 100%;
+			background: #e8edf0;
+			margin-left: 20px;
+			position: relative;
+		}
+		#cont1 h3{
+			position: absolute;
+			top:-20px;
+			left:10px;
+			font-size: 30px;
+		}
+		#cont1 p{
+			position: absolute;
+			top:30px;
+			left:10px;
+			font-size: 20px;
+		}
+		#cont2{
+			height: 720px;
+			width: 100%;
+			background: #fff;
+			margin-left: 20px;
+		}
+		#show{
+			position: absolute;
+			top:170px;
+			left:20px;
+		}
+		#gxbb{
+			position: absolute;
+			top:270px;
+			left:20px;
+		}
+		#hgbb{
+			position: absolute;
+			top:400px;
+			left:20px;
+		}
+		#gxbb input{
+			width: 160px;
+			height: 40px;
+			background: blue;
+			color: #fff;
+			border:1px solid #efefef;
+			border-radius: 10px;
+			position: absolute;
+			left: 20px;
+			top:70px;
+			text-align: center;
+			font-size: 22px;
+			cursor: pointer;
+		}
+		#hgbb input{
+			width: 160px;
+			height: 40px;
+			background: blue;
+			color: #fff;
+			border:1px solid #efefef;
+			border-radius: 10px;
+			position: absolute;
+			left: 20px;
+			top:130px;
+			text-align: center;
+			font-size: 22px;
+			cursor: pointer;
+		}
+		#hg_se{
+			width:130px;
+			height: 40px;
+			margin-left: 20px;
+			font-size: 20px;
+			text-align: center;
+		}
+
+		#info_1{
+			width: 520px;
+			height: 700px;
+			background: #efefef;
+			position: absolute;
+			top:180px;
+			left:520px;
+		}
+		#info_2{
+			width: 520px;
+			height: 700px;
+			background: #efefef;
+			position: absolute;
+			top:180px;
+			left:1050px;
+		}
+		#info h3{
+			font-size: 40px;
+			margin-top: 20px;
+			margin-left: 20px;
+		}
+		#info h4{
+			font-size: 30px;
+			margin-top: 20px;
+			margin-left: 20px;
+		}
+		#info p{
+			font-size: 27px;
+			margin-top: -25px;
+			margin-left: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="head">
+		<ul>
+			<li id="he_li" style="width: 250px;font-size: 27px">FastAdmin</li>
+			<li>control</li>
+			<li>handsang</li>
+		</ul>
+	</div>
+	<div id="left">
+		<ul style="margin-top:30px">
+			<li id="le_li">控制台</li>
+			<li>常规管理</li>
+			<li>分类管理</li>
+			<li>权限管理</li>
+			<li>常规管理</li>
+			<li>分类管理</li>
+			<li>权限管理</li>
+			<li>常规管理</li>
+			<li>分类管理</li>
+			<li>权限管理</li>
+		</ul>
+	</div>
+	<div id="right">
+		<h2>控制平台</h2>
+		<div id="content">
+			<div id="cont1">
+				<h3>版本发布</h3>
+				<p>用于统一管理网站的所有版本发布问题</p>
+			</div>
+			<div id="cont2">
+				<div id="show">
+					<h2>当前版本</h2>
+				</div>
+				<div id="gxbb">
+					<h2>更新版本</h2>
+                    <form action="{% url 'gitweb:contact'%}" method="post">
+						 {%csrf_token%}
+						<input type="submit" value="更新">
+					</form>
+				</div>
+				<div id="hgbb">
+					<h2>回滚版本</h2>
+					<form action="{% url 'gitweb:conthg'%}" method="post">
+						{%csrf_token%}
+						<select name="se_name" id="hg_se">
+							{% for i in arr %}
+								<option value="{{i}}" name="{{i}}">{{i}}</option>
+							{%endfor%}
+						</select>
+						<input type="submit" value="回滚">
+					</form>
+				</div>
+				<div id="info">
+					<div id="info_1">
+						<h3>tomcat 1</h3>
+						<hr>
+						<h4>ip信息</h4>
+						<p>{{ip1}}</p>
+						<h4>版本信息</h4>
+						<p>{{bb1}}</p>
+						<h4>内存信息</h4>
+						<p>{{mem1}}</p>
+						<h4>io信息</h4>
+						<p>{{io1}}</p>
+					</div>
+					<div id="info_2">
+						<h3>tomcat 2</h3>
+						<hr>
+						<h4>ip信息</h4>
+						<p>{{ip2}}</p>
+						<h4>版本信息</h4>
+						<p>{{bb2}}</p>
+						<h4>内存信息</h4>
+						<p>{{mem2}}</p>
+						<h4>io信息</h4>
+						<p>{{io2}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

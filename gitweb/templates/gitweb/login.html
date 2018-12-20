@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			background: #512f52;
+		}
+		#box{
+			width: 450px;
+			height: 300px;
+			margin: 200px 1000px;
+		}
+		#box1{
+			height: 90px;
+			background: #6d4b70;
+			align-content: center;
+			font-weight: bold;
+			position: relative;
+		}
+		#box1 h3{
+			line-height: 90px;
+			color: #fff;
+			font-size: 27px;
+			padding-left: 40px;
+		}
+		#box1 p{
+			position: absolute;
+			right: 24px;
+			top: -17px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 32px;
+		}
+		#box2{
+			height: 320px;
+			background: #f2f2f2;
+			position: relative;
+		}
+		input{
+			width: 350px;
+			height: 40px;
+			border:1px solid #efefef;
+			border-radius: 10px;
+			position: absolute;
+			left: 40px;
+			text-indent: 10px;
+			font-size: 22px;
+		}
+		#input1{
+			top: 50px;
+		}
+		#input2{
+			top: 120px;
+		}
+		#input3{
+			left:40px;
+			top: 200px;
+			width: 110px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			color: #fff;
+			font-size: 20px;
+			background:#6d4872 ;
+			cursor: pointer;
+		}
+		#box2 p{
+			color: #7d7d7d;
+			position: absolute;
+			right: 100px;
+			bottom: 65px;
+			cursor: pointer;
+		}
+		span{
+			position: absolute;
+			top: 173px;
+			left: 50px;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="box1">
+			<h3>Login Form</h3>
+			<p>x</p>
+		</div>
+		<div id="box2">
+			<form action="{% url 'gitweb:act'%}"method="post">
+				{%csrf_token%}
+				<input type="text" id="input1" name="name">
+				<input type="password" id="input2" name="password">
+				<input type="submit" id="input3" value="Login in">
+                <span>{{err}}</span>
+			</form>
+			<p>forget your password?</p>
+		</div>
+	</div>
+</body>
+</html>
